@@ -36,7 +36,7 @@ client = hollaex.HollaExAPI(api_url='<EXCHANGE_API_URL>',
                                 api_secret ='<MY_API_SECRET>')
 
 try:
-ticker = client.get_ticker('xht-usdt')
+ticker = client.get_ticker(market='xht-usdt')
 print('The volume is: ', ticker)
 except Exception as e:
 print(e)
