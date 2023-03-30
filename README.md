@@ -73,7 +73,7 @@ print(e)
 | `cancel_all_orders` | <ul><li>**symbol**: HollaEx trading symbol e.g. `xht-usdt`</li></ul> | Cancel all the active orders of a user, filtered by currency pair symbol |
 
 ### Example:
-**This code demonstrates how to use several methods, such as creating orders, canceling orders, retrieving user trades, and getting account information. You can customize the parameters of these methods to fit your specific use case.
+This code demonstrates how to use several methods, such as creating orders, canceling orders, retrieving user trades, and getting account information. You can customize the parameters of these methods to fit your specific use case.
 ```python
 # Import the HollaExAPI class from the src module
 from src import HollaExAPI
