@@ -282,8 +282,7 @@ class HollaExAPI:
         else:
             print(f'Error getting user trades: {response.text}')
             return None
-    import requests
-
+    
     def get_order(self,order_id):
         url = f"{self.api_url}{self.base_url}/order?order_id={order_id}"
         path = url.replace(f"{self.api_url}{self.base_url}", '')
@@ -330,7 +329,7 @@ class HollaExAPI:
             return None
 
     def create_order(self, symbol, side, size, type, price=0, opts=None):
-        url = f"{self.apiUrl}{self.baseUrl}/order"
+        url = f"{self.api_url}{self.base_url}/order"
         data = {'symbol': symbol, 'side': side, 'size': size, 'type': type, 'price': price}
 
         if opts is not None:
