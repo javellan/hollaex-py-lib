@@ -7,8 +7,8 @@ API_SECRET = 'your_secret_key'
 # Create an instance of the HollaExAPI class with your API key and secret
 kit = HollaExAPI(api_key=API_KEY, api_secret=API_SECRET)
 
-# Place a sell order for 1 XHT at a price of 1 USDT
-kit.create_order(market='xht-usdt', amount=1, price=1, side='sell')
+# Place a sell order for 1 XHT at a price of 1 USDT create_order(market,amount,price,side)
+kit.create_order('xht-usdt',1,1,'sell')
 
 # Cancel all orders for the XHT/USDT market
 kit.cancel_all_orders('xht-usdt')
