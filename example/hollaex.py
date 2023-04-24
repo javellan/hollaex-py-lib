@@ -36,7 +36,7 @@ kit.make_withdrawal(currency='usdt', amount=1, address='TFQ9gxeMEkmKoxgrbnHNdu4e
 print(kit.get_withdrawals(currency='xht', waiting='false'))
 
 # Get the balance of XHT in your account
-print(kit.get_balance('xht'))
+print(kit.get_balance())
 
 # Get user information for your account
 print(kit.get_user())
