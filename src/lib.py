@@ -1027,5 +1027,40 @@ class HollaExAPI:
         headers = self.auth_me(path, "GET")
         response = requests.get(url, headers=headers,)
         return response
+    def send_exchange_user_email(self, user_id, mail_type, data):
+        url = f"{self.api_url}{self.base_url}/admin/send-email"
+        data1 = {
+            'user_id': user_id,
+            'mail_type': mail_type,
+            'data': data
+        }
+        path = url.replace(f"{self.api_url}{self.base_url}", '')
+        headers = self.auth_me(path, "POST", params=data1)
+        response = requests.post(url, headers=headers,json =data1)
+        return response.json()
+  
+    
+    def send_raw_email(self, receivers, html, opts = {
+    		'title': None,
+    		'text': None
+    	}):
+        
+        url = f"{self.api_url}{self.base_url}/admin/send-email/raw"
+        data = {'receivers': receivers, 'html': html}
+    
+        if isinstance(opts['title'], str):
+            data['title'] = opts['title']
+    
+        if isinstance(opts['text'], str):
+            data['text'] = opts['text']
+    
 
+        path = url.replace(f"{self.api_url}{self.base_url}", '')
+        headers = self.auth_me(path, "POST", params=data)
+        response = requests.post(url, headers=headers,json =data)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print(f'Error: {response.text}')
+            return None
      
