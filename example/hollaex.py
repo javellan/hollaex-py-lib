@@ -17,7 +17,7 @@ kit.cancel_all_orders('xht-usdt')
 kit.cancel_order('178a1b3b-27d4-4a57-a990-448ac61882cd')
 
 # Get all open orders for the XHT/USDT market
-print(kit.getOrders(symbol='xht-usdt'))
+print(kit.get_orders(symbol='xht-usdt'))
 
 # Get a specific order with the given order ID
 order = kit.get_order("178a1b3b-27d4-4a57-a990-448ac61882cd")
