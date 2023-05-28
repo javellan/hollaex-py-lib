@@ -1,4 +1,4 @@
-# Import the HollaExAPI class from the lib.py in src derectory, you can copy the file in the example directory
+# Import the HollaExAPI class from the lib.py in src directory, you can copy the file in the example directory
 from lib.py  import HollaExAPI
 # Set your API key and secret
 API_KEY = 'your_api_key'
