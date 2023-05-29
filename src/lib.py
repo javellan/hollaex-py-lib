@@ -328,23 +328,23 @@ class HollaExAPI:
             print(f'Error getting orders: {response.text}')
             return None
 
-    def create_order(self, symbol, side, size, type, price=0, opts=None):
-        url = f"{self.api_url}{self.base_url}/order"
-        data = {'symbol': symbol, 'side': side, 'size': size, 'type': type, 'price': price}
+#     def create_order(self, symbol, side, size, type, price=0, opts=None):
+#         url = f"{self.api_url}{self.base_url}/order"
+#         data = {'symbol': symbol, 'side': side, 'size': size, 'type': type, 'price': price}
 
-        if opts is not None:
-            if 'stop' in opts and isinstance(opts['stop'], (int, float)):
-                data['stop'] = opts['stop']
-            if 'meta' in opts and isinstance(opts['meta'], dict):
-                data['meta'] = opts['meta']
-        headers = self.auth_me("/order", "POST", params=data)
-        response = requests.post(url, json=data, headers=headers)
-        if response.status_code == 200:
-            order_id = response.json().get('id')
-            return order_id
-        else:
-            print(f'Error creating order: {response.text}')
-            return None
+#         if opts is not None:
+#             if 'stop' in opts and isinstance(opts['stop'], (int, float)):
+#                 data['stop'] = opts['stop']
+#             if 'meta' in opts and isinstance(opts['meta'], dict):
+#                 data['meta'] = opts['meta']
+#         headers = self.auth_me("/order", "POST", params=data)
+#         response = requests.post(url, json=data, headers=headers)
+#         if response.status_code == 200:
+#             order_id = response.json().get('id')
+#             return order_id
+#         else:
+#             print(f'Error creating order: {response.text}')
+#             return None
 
     def cancel_order(self,order_id):
         url = f"{self.api_url}{self.base_url}/order?order_id={order_id}"
